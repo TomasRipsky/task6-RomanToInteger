@@ -101,3 +101,4 @@ test("H-Limits", function(assert) {
   assert.propEqual(convertIntegerToRoman(4000), {value: 0, message: OUT_OF_RANGE, result: false}, "TC-H-1");
   assert.propEqual(convertIntegerToRoman(0), {value: 0, message: OUT_OF_RANGE, result: false}, "TC-H-2");
 });
+
