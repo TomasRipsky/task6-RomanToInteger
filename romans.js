@@ -22,7 +22,7 @@ function init() {
   };
   //ADING GOOGLE EVENT
   gtag('event','Mode selected',{
-    'Mode Selected':getModeTitle;
+    'Mode Selected':getModeTitle
   });
 
   // Now, the convertion operation does only perform the operation. 
