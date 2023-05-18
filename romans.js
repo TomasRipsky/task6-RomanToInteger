@@ -20,6 +20,10 @@ function init() {
   const getModeTitle = function(integerToRoman) {
     return integerToRoman ? 'Integer To Roman' : 'Roman To Integer';
   };
+  //ADING GOOGLE EVENT
+  gtag('event','Mode selected',{
+    'Mode Selected':getModeTitle;
+  });
 
   // Now, the convertion operation does only perform the operation. 
   // Things we have extracted to this listener: 
