@@ -23,8 +23,17 @@ function init() {
   //ADING GOOGLE EVENT
   // eslint-disable-next-line no-undef
   gtag('event','Mode selected',{
-    'Mode Selected':getModeTitle
+    'Mode Selected':getModeTitle(modeCheckbox.checked)
   });
+  
+ //ADDING GOOGLE EVENT
+// eslint-disable-next-line no-undef
+gtag('event', 'Conversión realizada', {
+  'Modo': getModeTitle(modeCheckbox.checked),
+  'Valor de entrada': inputValue,
+  'Resultado': convertion.result ? 'Éxito' : 'Error',
+  'Valor convertido': convertion.value
+});
 
   // Now, the convertion operation does only perform the operation. 
   // Things we have extracted to this listener: 
