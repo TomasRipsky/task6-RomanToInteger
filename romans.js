@@ -21,6 +21,7 @@ function init() {
     return integerToRoman ? 'Integer To Roman' : 'Roman To Integer';
   };
   //ADING GOOGLE EVENT
+  // eslint-disable-next-line no-undef
   gtag('event','Mode selected',{
     'Mode Selected':getModeTitle
   });
