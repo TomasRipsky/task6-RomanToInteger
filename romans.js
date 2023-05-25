@@ -43,11 +43,7 @@ function init() {
   });
 
 }
-// ADING GOOGLE EVENT
-// eslint-disable-next-line no-undef
-gtag('event', 'Convertion Error', {
-  'Mensaje de error': convertion.message
-});
+
 
 // Now the convertion methods receive both an input argument instead
 // of reading directly from the UI.
