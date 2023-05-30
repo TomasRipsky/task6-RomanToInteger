@@ -15,18 +15,18 @@ function init() {
   
   modeCheckbox.addEventListener('change', function(e) {
     header.innerHTML = getModeTitle(e.target.checked);
+    // eslint-disable-next-line no-undef
+    gtag('event','Mode selected',{ 
+      'Header Name':header.innerHTML
+    });
   });
- 
+  
   const getModeTitle = function(integerToRoman) {
     return integerToRoman ? 'Integer To Roman' : 'Roman To Integer';
   };
   
- //ADING GOOGLE EVENT
- // eslint-disable-next-line no-undef
-  gtag('event','Mode selected',{ 
-    'Mode Selected':getModeTitle(e.target.checked)
-  });
 
+ 
   // Now, the convertion operation does only perform the operation. 
   // Things we have extracted to this listener: 
   // 1 - Read the UI inputs (inputArea.value)
