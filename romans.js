@@ -17,7 +17,7 @@ function init() {
     header.innerHTML = getModeTitle(e.target.checked);
     // eslint-disable-next-line no-undef
     gtag('event','Mode selected',{ 
-      'Header Name':header
+      'Mode Selected':getModeTitle(e.target.checked);
     });
   });
   
