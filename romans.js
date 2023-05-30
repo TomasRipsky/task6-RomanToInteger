@@ -13,23 +13,18 @@ function init() {
   var inputArea = document.querySelector('input[type=\'text\']');
 
   
-   modeCheckbox.addEventListener('change', function(e) {
+  modeCheckbox.addEventListener('change', function(e) {
     header.innerHTML = getModeTitle(e.target.checked);
-
-    // Track mode change event with gtag
-    var mode = e.target.checked ? 'IntegerToRoman' : 'RomanToInteger';
-    // eslint-disable-next-line no-undef 
-    gtag('event', 'ModeChange', {
-      event_category: 'Mode',
-      event_label: mode
-    });
   });
-
-
+ 
   const getModeTitle = function(integerToRoman) {
     return integerToRoman ? 'Integer To Roman' : 'Roman To Integer';
   };
-
+ //ADING GOOGLE EVENT
+ // eslint-disable-next-line no-undef
+  gtag('event','Mode selected',{ 
+    'Mode Selected':getModeTitle(e.target.checked)
+  });
 
   // Now, the convertion operation does only perform the operation. 
   // Things we have extracted to this listener: 
@@ -137,7 +132,12 @@ const convertIntegerToRoman = function(num) {
   // Integer not in the supported range -> exit with the right message
   if (Number(num) > 3999 || Number(num) < 1) {
     response.message = OUT_OF_RANGE;
-    return response;   
+    return response;
+    //ADING GOOGLE EVENT
+    // eslint-disable-next-line no-undef
+    gtag('event','Mode selected',{ 
+      'Integer Not Supported':response
+    });
   }
 
   const mapping = {
