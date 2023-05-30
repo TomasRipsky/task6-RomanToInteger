@@ -12,15 +12,18 @@ function init() {
   var outputArea = document.querySelector('.convert-output');
   var inputArea = document.querySelector('input[type=\'text\']');
 
-
-  modeCheckbox.addEventListener('change', function(e) {
+  
+   modeCheckbox.addEventListener('change', function(e) {
     header.innerHTML = getModeTitle(e.target.checked);
-      //ADING GOOGLE EVENT
-       // eslint-disable-next-line no-undef
-          gtag('event','Mode selected',{
-              'Mode Selected':getModeTitle(e.target.checked)
-            });
+
+    // Track mode change event with gtag
+    var mode = e.target.checked ? 'IntegerToRoman' : 'RomanToInteger';
+    gtag('event', 'ModeChange', {
+      event_category: 'Mode',
+      event_label: mode
+    });
   });
+
 
   const getModeTitle = function(integerToRoman) {
     return integerToRoman ? 'Integer To Roman' : 'Roman To Integer';
