@@ -20,6 +20,7 @@ function init() {
   const getModeTitle = function(integerToRoman) {
     return integerToRoman ? 'Integer To Roman' : 'Roman To Integer';
   };
+  
  //ADING GOOGLE EVENT
  // eslint-disable-next-line no-undef
   gtag('event','Mode selected',{ 
@@ -133,11 +134,6 @@ const convertIntegerToRoman = function(num) {
   if (Number(num) > 3999 || Number(num) < 1) {
     response.message = OUT_OF_RANGE;
     return response;
-    //ADING GOOGLE EVENT
-    // eslint-disable-next-line no-undef
-    gtag('event','Mode selected',{ 
-      'Integer Not Supported':response
-    });
   }
 
   const mapping = {
