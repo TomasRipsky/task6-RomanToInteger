@@ -15,16 +15,17 @@ function init() {
 
   modeCheckbox.addEventListener('change', function(e) {
     header.innerHTML = getModeTitle(e.target.checked);
+      //ADING GOOGLE EVENT
+       // eslint-disable-next-line no-undef
+          gtag('event','Mode selected',{
+              'Mode Selected':getModeTitle(e.target.checked)
+            });
   });
 
   const getModeTitle = function(integerToRoman) {
     return integerToRoman ? 'Integer To Roman' : 'Roman To Integer';
   };
-  //ADING GOOGLE EVENT
-  // eslint-disable-next-line no-undef
-  gtag('event','Mode selected',{
-    'Mode Selected':getModeTitle(modeCheckbox.checked)
-  });
+
 
   // Now, the convertion operation does only perform the operation. 
   // Things we have extracted to this listener: 
