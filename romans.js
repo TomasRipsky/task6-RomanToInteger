@@ -18,6 +18,7 @@ function init() {
 
     // Track mode change event with gtag
     var mode = e.target.checked ? 'IntegerToRoman' : 'RomanToInteger';
+    // eslint-disable-next-line no-undef 
     gtag('event', 'ModeChange', {
       event_category: 'Mode',
       event_label: mode
